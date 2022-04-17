@@ -48,6 +48,7 @@ const PostDetail = ({ post }) => {
       case 'image':
         return (
           <Image
+            loader={grpahCMSImageLoader}
             key={index}
             alt={obj.title}
             height={obj.height}
@@ -65,8 +66,9 @@ const PostDetail = ({ post }) => {
       <div className="mb-8 rounded-lg bg-white pb-12 shadow-lg lg:p-8">
         <div className="relative mb-6 overflow-hidden shadow-md">
           <Image
+            loader={grpahCMSImageLoader}
             src={post.featuredImage.url}
-            alt=""
+            alt={post.title}
             className="h-full w-full rounded-t-lg object-cover  object-top shadow-lg lg:rounded-lg"
           />
         </div>
@@ -74,6 +76,8 @@ const PostDetail = ({ post }) => {
           <div className="mb-8 flex w-full items-center">
             <div className="mr-8 hidden items-center items-center justify-center md:flex lg:mb-0 lg:w-auto">
               <Image
+                unoptimized
+                loader={grpahCMSImageLoader}
                 alt={post.author.name}
                 height="30px"
                 width="30px"
