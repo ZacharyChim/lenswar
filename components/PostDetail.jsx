@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import moment from 'moment'
 
-import { grpahCMSImageLoader } from '../util';
+import { grpahCMSImageLoader } from '../util'
 
 const PostDetail = ({ post }) => {
   const getContentFragment = (index, text, obj, type) => {
@@ -56,6 +56,7 @@ const PostDetail = ({ post }) => {
             height={obj.height}
             width={obj.width}
             src={obj.src}
+            layout="fill"
           />
         )
       default:
@@ -66,12 +67,13 @@ const PostDetail = ({ post }) => {
   return (
     <>
       <div className="mb-8 rounded-lg bg-white pb-12 shadow-lg lg:p-8">
-        <div className="relative mb-6 overflow-hidden shadow-md">
+        <div className="relative mb-6 overflow-hidden pb-80 ">
           <Image
             loader={grpahCMSImageLoader}
             src={post.featuredImage.url}
             alt={post.title}
-            className="h-full w-full rounded-t-lg object-cover  object-top shadow-lg lg:rounded-lg"
+            layout="fill"
+            className="absolute h-80 w-full rounded-t-lg object-cover  object-top shadow-lg lg:rounded-lg"
           />
         </div>
         <div className="px-4 lg:px-0">
