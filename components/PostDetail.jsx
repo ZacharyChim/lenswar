@@ -2,6 +2,8 @@ import React from 'react'
 import Image from 'next/image'
 import moment from 'moment'
 
+import { grpahCMSImageLoader } from '../util';
+
 const PostDetail = ({ post }) => {
   const getContentFragment = (index, text, obj, type) => {
     let modifiedText = text
