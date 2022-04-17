@@ -67,13 +67,16 @@ const PostDetail = ({ post }) => {
   return (
     <>
       <div className="mb-8 rounded-lg bg-white pb-12 shadow-lg lg:p-8">
-        <div className="relative mb-6 overflow-hidden pb-80 ">
+        <div className="relative mb-6 overflow-hidden">
           <Image
             loader={grpahCMSImageLoader}
             src={post.featuredImage.url}
             alt={post.title}
-            layout="fill"
-            className="absolute h-80 w-full rounded-t-lg object-cover  object-top shadow-lg lg:rounded-lg"
+            width="100%"
+            height="100%"
+            layout="responsive"
+            objectFit="contain"
+            className="absolute rounded-t-lg object-cover object-top shadow-lg lg:rounded-lg"
           />
         </div>
         <div className="px-4 lg:px-0">
